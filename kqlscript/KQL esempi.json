@@ -1,0 +1,16 @@
+{
+	"name": "KQL esempi",
+	"properties": {
+		"content": {
+			"query": "StormEvents\n| sort by DamageProperty_1 desc\n| take 10\n\nStormEvents\n| sort by StartTime desc \n| project StartTime, EndTime, State, EventType, DamageProperty, EpisodeNarrative\n| take 20\n\nStormEvents\n| summarize event_count=count(), mid = avg(BeginLat) by State\n| sort by mid\n| where event_count > 1800\n| project State, event_count\n| render columnchart\n\nStormEvents\n| sort by DamageProperty_1 desc\n| where DamageProperty_1 > 5000\n| project StartTime, State, EventType, DamageProperty_1, Source\n| take 10",
+			"metadata": {
+				"language": "kql"
+			},
+			"currentConnection": {
+				"poolName": "kustopool1",
+				"databaseName": "testkustodatabase"
+			}
+		},
+		"type": "KqlQuery"
+	}
+}

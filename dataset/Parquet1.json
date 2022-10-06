@@ -1,0 +1,42 @@
+{
+	"name": "Parquet1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "sdtsynapsedemo-WorkspaceDefaultStorage",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "Data.parquet",
+				"fileSystem": "financedata"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": [
+			{
+				"name": "ProductID",
+				"type": "UTF8"
+			},
+			{
+				"name": "Date",
+				"type": "UTF8"
+			},
+			{
+				"name": "Zip",
+				"type": "UTF8"
+			},
+			{
+				"name": "Units",
+				"type": "UTF8"
+			},
+			{
+				"name": "Revenue",
+				"type": "UTF8"
+			}
+		]
+	},
+	"type": "Microsoft.Synapse/workspaces/datasets"
+}
