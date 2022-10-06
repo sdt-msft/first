@@ -1,0 +1,71 @@
+{
+	"name": "Notebook 1",
+	"properties": {
+		"nbformat": 4,
+		"nbformat_minor": 2,
+		"bigDataPool": {
+			"referenceName": "sdtSparkPool1",
+			"type": "BigDataPoolReference"
+		},
+		"sessionProperties": {
+			"driverMemory": "28g",
+			"driverCores": 4,
+			"executorMemory": "28g",
+			"executorCores": 4,
+			"numExecutors": 2,
+			"conf": {
+				"spark.dynamicAllocation.enabled": "false",
+				"spark.dynamicAllocation.minExecutors": "2",
+				"spark.dynamicAllocation.maxExecutors": "2",
+				"spark.autotune.trackingId": "5fafaeab-a6b3-4a08-8a3b-f36959bf4e8b"
+			}
+		},
+		"metadata": {
+			"saveOutput": true,
+			"enableDebugMode": false,
+			"kernelspec": {
+				"name": "synapse_pyspark",
+				"display_name": "Synapse PySpark"
+			},
+			"language_info": {
+				"name": "python"
+			},
+			"a365ComputeOptions": {
+				"id": "/subscriptions/3174e75a-bc4f-4325-9e92-4375e651754a/resourceGroups/synapsedemo/providers/Microsoft.Synapse/workspaces/sdtsynapsedemo/bigDataPools/sdtSparkPool1",
+				"name": "sdtSparkPool1",
+				"type": "Spark",
+				"endpoint": "https://sdtsynapsedemo.dev.azuresynapse.net/livyApi/versions/2019-11-01-preview/sparkPools/sdtSparkPool1",
+				"auth": {
+					"type": "AAD",
+					"authResource": "https://dev.azuresynapse.net"
+				},
+				"sparkVersion": "3.2",
+				"nodeCount": 10,
+				"cores": 4,
+				"memory": 28,
+				"automaticScaleJobs": false
+			},
+			"sessionKeepAliveTimeout": 30
+		},
+		"cells": [
+			{
+				"cell_type": "code",
+				"metadata": {
+					"microsoft": {
+						"language": "python"
+					},
+					"collapsed": false
+				},
+				"source": [
+					"%%pyspark\r\n",
+					"df = spark.read.load('abfss://commondatamodel@sdtcdmdatalake.dfs.core.windows.net/CustomerInsights_32d5f084-574f-428e-993c-74041b3ac9ab/AzureSynapseAnalyticsexport/ATMTransactions_ATMTransactions/2022/01/25/1322/ATMTransactions_ATMTransactions_1.csv', format='csv'\r\n",
+					"## If header exists uncomment line below\r\n",
+					"##, header=True\r\n",
+					")\r\n",
+					"display(df.limit(20))"
+				],
+				"execution_count": 2
+			}
+		]
+	}
+}
