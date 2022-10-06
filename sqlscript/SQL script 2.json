@@ -2,7 +2,7 @@
 	"name": "SQL script 2",
 	"properties": {
 		"content": {
-			"query": "SELECT TOP (100) [CustomerId]\n,[FirstName]\n,[LastName]\n,[FullName]\n,[DateOfBirth]\n,[CF]\n,[Gender]\n,[EMail]\n,[Telephone]\n,[PostCode]\n,[StreetAddress]\n,[City]\n,[State]\n,[Country]\n,[CreatedOn]\n,[TwitterAlias]\n,[DiscussionsAlias]\n,[ContactId]\n,[RewardPoints]\n,[CreditCard]\n,[PreferredBrance]\n,[MarketingConsent]\n,[OnlineBankingContacts_OnlineBankingContacts_ContactId]\n,[OnlineBankingContacts_OnlineBankingContacts_ContactId_Alternate]\n,[HighValueCustomers_PremiumCustomers_LoyaltyId]\n,[HighValueCustomers_PremiumCustomers_LoyaltyId_Alternate]\n FROM [CustomerInsightsContacts].[dbo].[Customer]",
+			"query": "SELECT TOP (200) [CustomerId]\n,[FirstName]\n,[LastName]\n,[FullName]\n,[DateOfBirth]\n,[CF]\n,[Gender]\n,[EMail]\n,[Telephone]\n,[PostCode]\n,[StreetAddress]\n,[City]\n,[State]\n,[Country]\n,[CreatedOn]\n,[TwitterAlias]\n,[DiscussionsAlias]\n,[ContactId]\n,[RewardPoints]\n,[CreditCard]\n,[PreferredBrance]\n,[MarketingConsent]\n,[OnlineBankingContacts_OnlineBankingContacts_ContactId]\n,[OnlineBankingContacts_OnlineBankingContacts_ContactId_Alternate]\n,[HighValueCustomers_PremiumCustomers_LoyaltyId]\n,[HighValueCustomers_PremiumCustomers_LoyaltyId_Alternate]\n FROM [CustomerInsightsContacts].[dbo].[Customer]",
 			"metadata": {
 				"language": "sql"
 			},
